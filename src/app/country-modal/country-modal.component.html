@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Modifier un pays</h2>
+<mat-dialog-content>
+  <form #countryForm="ngForm">
+    <mat-form-field appearance="fill" class="custom-form-field">
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="Name" name="name" [(ngModel)]="country.name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+      <mat-label>Population</mat-label>
+      <input matInput placeholder="Population" name="population" [(ngModel)]="country.population" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+      <mat-label>Superficie</mat-label>
+      <input matInput placeholder="Superficie" name="superficie" [(ngModel)]="country.superficie" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+      <mat-label>Produit Intérieur Brut</mat-label>
+      <input matInput placeholder="ProduitInterieurBrut" name="ProduitInterieurBrut" [(ngModel)]="country.ProduitInterieurBrut" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-form-field">
+      <mat-label>Continent</mat-label>
+      <mat-select name="continent" [(ngModel)]="country.continent" required>
+        <mat-option *ngFor="let continent of continents" [value]="continent">{{ continent }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button  (click)="onSave()" class="btn btn-primary" >Save</button>
+</mat-dialog-actions>
+
+
+

@@ -1,0 +1,14 @@
+<div class="country-details" *ngIf="country">
+  <div class="country-details-left">
+    <p><strong>Name:</strong> {{ country.name }}</p>
+    <p><strong>Population:</strong> {{ country.population }}</p>
+    <p><strong>Superficie:</strong> {{ country.superficie }}</p>
+    <p><strong>ProduitInterieurBrut:</strong> {{ country.ProduitInterieurBrut }}</p>
+    <p><strong>Continent:</strong> {{ country.continent }}</p>
+  </div>
+  <div class="country-details-right">
+    <p><strong>Image</strong></p>
+    <img [src]="country.imageUrl" alt="Country Image" />
+  </div>
+</div>
+

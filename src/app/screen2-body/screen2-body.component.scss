@@ -1,0 +1,21 @@
+.country-details {
+    display: flex;
+  
+    .country-details-left {
+      flex: 1;
+      margin-left: 7rem;
+      margin-top: 3rem;
+    }
+  
+    .country-details-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    img {
+      width: 600px; 
+      height: auto; 
+    }
+  }
+  

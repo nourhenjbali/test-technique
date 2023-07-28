@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Ajouter un nouveau pays</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Nom du pays</mat-label>
+    <input matInput [(ngModel)]="newCountry.name" required>
+  </mat-form-field>
+  <mat-form-field class="filed">
+    <mat-label>Population</mat-label>
+    <input matInput type="number" [(ngModel)]="newCountry.population" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label >Superficie</mat-label>
+    <input matInput type="number" [(ngModel)]="newCountry.superficie" required>
+  </mat-form-field>
+  <mat-form-field class="filed">
+    <mat-label >Produit Intérieur Brut</mat-label>
+    <input matInput type="number" [(ngModel)]="newCountry.ProduitInterieurBrut" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Continent</mat-label>
+    <mat-select [(ngModel)]="newCountry.continent">
+      <mat-option *ngFor="let continent of continents" [value]="continent">{{ continent }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*">
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Annuler</button>
+  <button mat-button (click)="openUploadWidget()" [disabled]="!selectedImageFile" cdkFocusInitial>Ajouter</button>
+</mat-dialog-actions>
+
+
+
+

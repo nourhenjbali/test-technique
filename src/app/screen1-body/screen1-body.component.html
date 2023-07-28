@@ -1,0 +1,52 @@
+<div class="body">
+  <div class="filter-container" *ngIf="showFilterContainer">
+    <input type="text" placeholder="Filter by Name" [(ngModel)]="filterName" />
+    <input
+      type="number"
+      placeholder="Filter by Population"
+      [(ngModel)]="filterPopulation"
+    />
+    <input
+      type="text"
+      placeholder="Filter by superficie"
+      [(ngModel)]="filterSuperficie"
+    />
+    <input
+    type="text"
+    placeholder="Filter by ProduitInterieurBrut"
+    [(ngModel)]="filterProduitInterieurBrut"
+  />
+    <input
+      type="text"
+      placeholder="Filter by Continent"
+      [(ngModel)]="filterContinent"
+    />
+  </div>
+
+  <table>
+    <tr>
+      <th (click)="filterByColumn('name')">Name</th>
+      <th (click)="filterByColumn('population')">Population</th>
+      <th (click)="filterByColumn('superficie')">Superficie</th>
+      <th (click)="filterByColumn('ProduitInterieurBrut')"> ProduitInterieurBrut</th>
+      <th (click)="filterByColumn('continent')">Continent</th>
+      <th>Image</th>
+      <th>Edit</th>
+    </tr>
+    <tr
+      *ngFor="let country of filteredCountries"
+      (click)="viewCountryDetails(country)"
+    >
+      <td>{{ country.name }}</td>
+      <td>{{ country.population }}</td>
+      <td>{{ country.superficie }}</td>
+      <td>{{ country.ProduitInterieurBrut }}</td>
+      <td>{{ country.continent }}</td>
+      <td><img [src]="country.imageUrl" alt="Country Image" width="50" height="50" /> </td>
+
+      <td>
+        <i class="fa fa-edit" (click)="openEditCountryModal($event,country)"></i>
+      </td>
+    </tr>
+  </table>
+</div>

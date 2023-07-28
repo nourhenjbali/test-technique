@@ -1,0 +1,41 @@
+<div class="headerContainer">
+  <h1>{{ headerTitle }}</h1>
+  <div class="header">
+    <button
+      *ngIf="headerType === 'screen1'"
+      (click)="onButton1Click()"
+      type="button"
+      class="btn btn-primary"
+      mdbRipple
+    >
+      Recherche
+    </button>
+    <button
+      *ngIf="headerType === 'screen1'"
+      (click)="onExportToCSVClick()"
+      type="button"
+      class="btn btn-primary"
+      mdbRipple
+    >
+      Exporter en CVS
+    </button>
+    <button
+      *ngIf="headerType === 'screen1'"
+      (click)="onButton2Click()"
+      type="button"
+      class="btn btn-primary"
+      mdbRipple
+    >
+      Ajouter
+    </button>
+    <button
+      *ngIf="headerType === 'screen2'"
+      (click)="onButton3Click()"
+      type="button"
+      class="btn btn-primary"
+      mdbRipple
+    >
+      Gestion des pays
+    </button>
+  </div>
+</div>

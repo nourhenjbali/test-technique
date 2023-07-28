@@ -1,0 +1,22 @@
+.headerContainer
+{
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1{
+      margin-left: 6rem;
+
+    }
+}
+
+.header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  button + button {
+    margin-left: 12px;
+  }
+  
